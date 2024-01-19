@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuctionRequest;
 use App\Models\Article;
 use App\Models\Auction;
 use Illuminate\Http\Request;
@@ -19,8 +20,9 @@ class AuctionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Article $article)
+    public function store(AuctionRequest $request, Article $article)
     {
-        //
+        $article->auctions()->create($request->all());
+        return redirect()->route('articles.show', $article);
     }
 }
