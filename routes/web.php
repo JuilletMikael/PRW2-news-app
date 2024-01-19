@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuctionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentController;
@@ -17,3 +18,4 @@ use App\Http\Controllers\CommentController;
 
 Route::resource('articles', ArticleController::class);
 Route::resource('articles.comments', CommentController::class)->only(['store']);
+Route::resource('articles.auctions', AuctionController::class)->only(['create', 'store']);
