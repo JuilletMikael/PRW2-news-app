@@ -5,12 +5,12 @@
     <form method="POST" action="{{ route('articles.auctions.store', $article) }}">
         @csrf
         <label for="amount">Montant en CHF</label>
-        <input type="number" name="amount">
+        <input type="number" name="amount" required>
         @error('amount')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <label for="email">email</label>
-        <input type="email" name="email">
+        <input type="email" name="email" required>
         @error('email')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
