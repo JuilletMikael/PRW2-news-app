@@ -30,6 +30,8 @@
         </li>
     @endforeach
     </ul>
+
+    Meilleur enchérissement le <strong>{{$auction->created_at}}</strong>
     <button type="button" onclick="window.location='{{route('articles.auctions.create', $article)}}'">Enchérir sur l'article</button>
 
 @endsection
