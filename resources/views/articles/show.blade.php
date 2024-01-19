@@ -30,5 +30,6 @@
         </li>
     @endforeach
     </ul>
+    <button type="button" onclick="window.location='{{route('articles.auctions.create', $article)}}'">Enchérir sur l'article</button>
 
 @endsection
