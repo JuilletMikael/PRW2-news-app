@@ -35,4 +35,9 @@ class Article extends Model
         $this->update(['archived_at' => now()]);
         $this->timestamps = true;
     }
+
+    public function auctions()
+    {
+        return $this->hasMany(Auction::class);
+    }
 }
