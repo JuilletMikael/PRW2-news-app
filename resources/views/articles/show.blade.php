@@ -31,7 +31,9 @@
     @endforeach
     </ul>
 
-    Meilleur enchérissement le <strong>{{$auction->created_at}}</strong>
+    @if ($auction)
+        Meilleur enchérissement le <strong>{{$auction->created_at}}</strong>
+    @endif
     <button type="button" onclick="window.location='{{route('articles.auctions.create', $article)}}'">Enchérir sur l'article</button>
 
 @endsection
