@@ -36,7 +36,13 @@ class Article extends Model
         $this->timestamps = true;
     }
 
-    public function incrementViews(){
+
+    public function incrementViews()
+    {
         $this->increment('views_counter');
+    }
+    public function auctions()
+    {
+        return $this->hasMany(Auction::class);
     }
 }

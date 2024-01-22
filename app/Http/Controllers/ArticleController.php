@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
+use Illuminate\Notifications\Action;
 
 class ArticleController extends Controller
 {
@@ -42,8 +43,10 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+
         $article->incrementViews();
-        return view('articles.show', compact('article'));
+        $auction = $article->auctions()->orderBy('amount','desc')->first();
+        return view('articles.show', compact('article', 'auction'));
     }
 
     /**
